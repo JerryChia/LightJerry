@@ -1,0 +1,42 @@
+<% if ( page.comments){ %>
+
+ <nav id="pagination" >
+    <% if (page.prev) { %>
+	  <% var list = page.prev.path.split("/") 
+		 var len = list.length;
+		 var postname = list[len-2];
+	  %>
+    <a href="<%- config.root %><%- page.prev.path %>" class="alignleft prev" ><%= __('prev')+"|"+postname %></a>
+    <% } %>
+    <% if (page.next) { %>
+	  <% var lists = page.next.path.split("/") 
+		 var lens = lists.length;
+		 var postnamenext = lists[lens - 2];
+	  %>
+    <a href="<%- config.root %><%- page.next.path %>" class="alignright next" ><%=  postnamenext +"|"+ __('next') %></a>
+    <% } %>
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"jerrychia"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- Duoshuo Comment END -->  
+
+  
+</section>
+<% } %>

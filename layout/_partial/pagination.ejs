@@ -1,0 +1,17 @@
+<nav id="pagination">
+  <% if (page.prev){ %>
+  <% var list = page.prev_link.split("/") 
+	 var len = list.length;
+	 var postname = list[len-2];
+  %>
+    <a href="<%- config.root %><%- page.prev_link %>" class="alignleft prev"><%= __('prev')+"|"+postname %></a>
+  <% } %>
+  <% if (page.next){ %>
+  <% var lists = page.prev_link.split("/") 
+	 var lens = lists.length;
+	 var postnamenext = lists[lens-2];
+  %>
+    <a href="<%- config.root %><%- page.next_link %>" class="alignright next"><%= postnamenext+ "|" + __('next') %></a>
+  <% } %>
+  <div class="clearfix"></div>
+</nav>
